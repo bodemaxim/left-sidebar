@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import 'bootstrap/dist/css/bootstrap.min.css'
 import { ref } from 'vue'
 import type { Ref } from 'vue'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 import NotificationTypes from '@/Enum/NotificationTypes'
 
