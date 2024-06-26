@@ -402,7 +402,7 @@ const isMobileView = ref(false)
 /* XS */
 @media (min-width: 320px) and (max-width: 575px) {
   main {
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .sidebar {
@@ -424,7 +424,7 @@ const isMobileView = ref(false)
 /* S */
 @media (min-width: 576px) and (max-width: 767px) {
   main {
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .navbar-toggler {
