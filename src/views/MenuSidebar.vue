@@ -383,6 +383,14 @@ const isMobileView = ref(false)
   right: 5px;
 }
 
+.burgerBtnOnSidebarVisible,
+.burgerBtnOnSidebarHidden {
+  width: 50px;
+  height: 50px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 .burgerBtnOnSidebarVisible {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
@@ -417,7 +425,7 @@ const isMobileView = ref(false)
   }
 
   .user-area-container {
-    width: calc(100% - 35px);
+    width: calc(100% - 65px);
   }
 }
 
