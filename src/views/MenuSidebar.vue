@@ -57,6 +57,9 @@ const setNotificationsNumber = (number: number, section: NotificationTypes) => {
   if (section === NotificationTypes.Notifications) notificationsNumber.value = number
   else agreementsNumber.value = number
 }
+
+const isMobileView = ref(false)
+
 //#endregion Методы
 </script>
 
@@ -241,16 +244,14 @@ const setNotificationsNumber = (number: number, section: NotificationTypes) => {
         </li>
       </ul>
 
-      <div class="form-check form-switch">
+      <div class="form-check form-switch hideOnMobile">
         <input
           class="form-check-input"
           type="checkbox"
           id="flexSwitchCheckDefault"
           @change="setAlwaysVisible"
         />
-        <label class="form-check-label hideOnMobile" for="flexSwitchCheckDefault"
-          >Всегда открыто</label
-        >
+        <label class="form-check-label" for="flexSwitchCheckDefault">Всегда открыто</label>
       </div>
 
       <hr />
@@ -275,7 +276,7 @@ const setNotificationsNumber = (number: number, section: NotificationTypes) => {
       <button
         type="button"
         id="sidebarCollapse"
-        class="btn hideOnMobile toggleSidebarButton btn-primary btnOnSidebarVisible"
+        class="btn toggleSidebarButton btn-primary btnOnSidebarVisible hideOnMobile"
         @click="toggleSidebar"
         v-if="!isAlwaysVisible && isShowSidebar"
       >
@@ -285,7 +286,7 @@ const setNotificationsNumber = (number: number, section: NotificationTypes) => {
     <button
       type="button"
       id="sidebarCollapse"
-      class="btn hideOnMobile toggleSidebarButton btn-primary btnOnSidebarHidden"
+      class="btn toggleSidebarButton btn-primary btnOnSidebarHidden hideOnMobile"
       @click="toggleSidebar"
       v-if="!isAlwaysVisible && !isShowSidebar"
     >
@@ -399,13 +400,15 @@ const setNotificationsNumber = (number: number, section: NotificationTypes) => {
 }
 
 /* XS */
-@media (max-width: 575px) {
-  .main {
+@media (min-width: 320px) and (max-width: 575px) {
+  main {
     font-size: 10px;
   }
 
   .sidebar {
-    width: 100%;
+    width: 100vw;
+    min-width: 100vw;
+    overflow-x: hidden;
     height: auto;
   }
 
@@ -420,7 +423,7 @@ const setNotificationsNumber = (number: number, section: NotificationTypes) => {
 
 /* S */
 @media (min-width: 576px) and (max-width: 767px) {
-  .main {
+  main {
     font-size: 12px;
   }
 
