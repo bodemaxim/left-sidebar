@@ -3,7 +3,7 @@ import { ref } from 'vue'
 import type { Ref } from 'vue'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-import NotificationTypes from '@/Enum/NotificationTypes'
+import NotificationTypes from '@/enum/NotificationTypes'
 
 //#region Данные
 /**
